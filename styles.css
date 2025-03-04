@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #87CEEB;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('background.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#plane {
+    position: absolute;
+    width: 100px; 
+    height: 50px; 
+    background-image: url('plane.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    bottom: 10%;
+    left: 10%;
+    transition: transform 0.2s ease;
+    transform-origin: center center; 
+}
+
+.bullet {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #FFD700;
+    border-radius: 50%;
+}
+
+.balloon {
+    position: absolute;
+    width: 50px; 
+    height: 70px; 
+    background-image: url('balloon.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: white;
+}
+
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: red;
+    display: none;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+.explosion {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('explosion.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    animation: explode 0.5s linear forwards;
+}
+
+#rocket-charges {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    font-size: 24px;
+    color: white;
+}
+
+.rocket {
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    background-image: url('rocket.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.charge-balloon {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    background-image: url('charge-balloon.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+}
