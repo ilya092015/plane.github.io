@@ -248,7 +248,7 @@ function checkPlaneCollision(balloon) {
 }
 
 function checkCollision(bullet) {
-    const balloons = document.querySelectorAll('.balloon');
+    const balloons = document.querySelectorAll('.balloon, .charge-balloon');
     const bulletRect = bullet.getBoundingClientRect();
 
     balloons.forEach(balloon => {
@@ -263,8 +263,17 @@ function checkCollision(bullet) {
             bullet.remove();
             score += 1;
             scoreElement.textContent = `Счет: ${score}`;
+
+            if (balloon.classList.contains('charge-balloon')) {
+                rocketCharges += 1;
+                updateRocketCharges();
+            }
         }
     });
+}
+
+function updateRocketCharges() {
+    rocketChargesElement.textContent = `Ракеты: ${rocketCharges}`;
 }
 
 function explodePlane() {
